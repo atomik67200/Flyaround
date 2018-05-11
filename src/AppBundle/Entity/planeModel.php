@@ -14,7 +14,7 @@ class planeModel
 {
     public function __toString()
     {
-        return $this->id;
+        return (string) $this->id;
     }
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="plane")

@@ -14,7 +14,7 @@ class Reservation
 {
     public function __toString()
     {
-        return $this->id;
+        return (string) $this->id;
     }
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="passenger")
