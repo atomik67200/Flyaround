@@ -1,0 +1,18 @@
+{
+  "name": "Qu-te-nouveau-projet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/atomik67200/Qu-te-nouveau-projet.git",
+  "author": "CodusMaximus <atomic67200@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "sass-loader": "^7.0.2"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.20.1",
+    "bootstrap-sass": "^3.3.7",
+    "node-sass": "^4.9.0",
+    "webpack-notifier": "^1.6.0"
+  }
+}
