@@ -516,6 +516,9 @@
     <service id="AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Controller\ReviewController" class="AppBundle\Controller\ReviewController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\Controller\SiteController" class="AppBundle\Controller\SiteController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -3634,6 +3637,8 @@
     <service id="abstract.instanceof.AppBundle\Controller\PlaneModelController" class="AppBundle\Controller\PlaneModelController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ReviewController" class="AppBundle\Controller\ReviewController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\ReviewController" class="AppBundle\Controller\ReviewController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\SiteController" class="AppBundle\Controller\SiteController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\SiteController" class="AppBundle\Controller\SiteController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\UserController" class="AppBundle\Controller\UserController" public="true" autowire="true" abstract="true"/>

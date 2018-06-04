@@ -347,6 +347,41 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/review')) {
+            // review_index
+            if ('/review' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::ReviewAction',  '_route' => 'review_index',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_review_index;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'review_index'));
+                }
+
+                if (!in_array($canonicalMethod, array('GET'))) {
+                    $allow = array_merge($allow, array('GET'));
+                    goto not_review_index;
+                }
+
+                return $ret;
+            }
+            not_review_index:
+
+            // review_new
+            if ('/review/new' === $pathinfo) {
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::ReviewNewAction',  '_route' => 'review_new',);
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_review_new;
+                }
+
+                return $ret;
+            }
+            not_review_new:
+
+        }
+
         elseif (0 === strpos($pathinfo, '/site')) {
             // site_index
             if ('/site' === $trimmedPathinfo) {

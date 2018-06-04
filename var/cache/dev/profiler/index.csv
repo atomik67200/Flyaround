@@ -74,3 +74,14 @@ b745f0,127.0.0.1,GET,http://localhost:8000/planemodel/,1528111871,,200
 ed339b,127.0.0.1,GET,http://localhost:8000/reservation/,1528111874,,200
 e02ce2,127.0.0.1,GET,http://localhost:8000/flight/,1528111877,,200
 9a7f89,127.0.0.1,GET,http://localhost:8000/site/,1528111880,,200
+181414,127.0.0.1,GET,http://localhost:8000/review,1528115038,946dc8,200
+946dc8,127.0.0.1,GET,http://localhost:8000/review,1528115038,,404
+5ef3ab,127.0.0.1,GET,http://localhost:8000/review/new,1528115044,c4a75f,200
+c4a75f,127.0.0.1,GET,http://localhost:8000/review/new,1528115044,,404
+7e75f6,127.0.0.1,GET,http://localhost:8000/review/new,1528115326,bc8843,200
+bc8843,127.0.0.1,GET,http://localhost:8000/review/new,1528115326,,500
+c99995,127.0.0.1,GET,http://localhost:8000/review/new,1528115351,,200
+4224a5,127.0.0.1,GET,http://localhost:8000/review,1528115356,,301
+295377,127.0.0.1,GET,http://localhost:8000/review/,1528115356,baf484,200
+baf484,127.0.0.1,GET,http://localhost:8000/review/,1528115356,,500
+7afc47,127.0.0.1,GET,http://localhost:8000/review/,1528115369,,200

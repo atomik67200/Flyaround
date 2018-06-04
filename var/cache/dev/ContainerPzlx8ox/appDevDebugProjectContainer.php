@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerNayirzf;
+namespace ContainerPzlx8ox;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -40,6 +40,7 @@ class appDevDebugProjectContainer extends Container
             'appbundle\\controller\\listingcontroller' => 'AppBundle\\Controller\\ListingController',
             'appbundle\\controller\\planemodelcontroller' => 'AppBundle\\Controller\\PlaneModelController',
             'appbundle\\controller\\reservationcontroller' => 'AppBundle\\Controller\\ReservationController',
+            'appbundle\\controller\\reviewcontroller' => 'AppBundle\\Controller\\ReviewController',
             'appbundle\\controller\\sitecontroller' => 'AppBundle\\Controller\\SiteController',
             'appbundle\\controller\\usercontroller' => 'AppBundle\\Controller\\UserController',
             'appbundle\\form\\flighttype' => 'AppBundle\\Form\\FlightType',
@@ -140,6 +141,7 @@ class appDevDebugProjectContainer extends Container
             'AppBundle\\Controller\\ListingController' => 'getListingControllerService.php',
             'AppBundle\\Controller\\PlaneModelController' => 'getPlaneModelControllerService.php',
             'AppBundle\\Controller\\ReservationController' => 'getReservationControllerService.php',
+            'AppBundle\\Controller\\ReviewController' => 'getReviewControllerService.php',
             'AppBundle\\Controller\\SiteController' => 'getSiteControllerService.php',
             'AppBundle\\Controller\\UserController' => 'getUserControllerService.php',
             'AppBundle\\Form\\FlightType' => 'getFlightTypeService.php',
@@ -1317,9 +1319,6 @@ class appDevDebugProjectContainer extends Container
             return ${($_ = isset($this->services['data_collector.request']) ? $this->services['data_collector.request'] : $this->services['data_collector.request'] = new \Symfony\Bundle\FrameworkBundle\DataCollector\RequestDataCollector()) && false ?: '_'};
         }, 1 => 'onKernelResponse'), 0);
         $instance->addListener('kernel.request', array(0 => function () {
-            return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
-        }, 1 => 'configure'), 2048);
-        $instance->addListener('console.command', array(0 => function () {
             return ${($_ = isset($this->services['debug.debug_handlers_listener']) ? $this->services['debug.debug_handlers_listener'] : $this->getDebug_DebugHandlersListenerService()) && false ?: '_'};
         }, 1 => 'configure'), 2048);
         $instance->addListener('kernel.request', array(0 => function () {
