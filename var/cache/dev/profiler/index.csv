@@ -85,3 +85,12 @@ c99995,127.0.0.1,GET,http://localhost:8000/review/new,1528115351,,200
 295377,127.0.0.1,GET,http://localhost:8000/review/,1528115356,baf484,200
 baf484,127.0.0.1,GET,http://localhost:8000/review/,1528115356,,500
 7afc47,127.0.0.1,GET,http://localhost:8000/review/,1528115369,,200
+c4f701,127.0.0.1,GET,http://localhost:8000/,1528115690,f3f9de,200
+f3f9de,127.0.0.1,GET,http://localhost:8000/,1528115690,,500
+e9028f,127.0.0.1,GET,http://localhost:8000/,1528115693,e40100,200
+e40100,127.0.0.1,GET,http://localhost:8000/,1528115693,,500
+09fd18,127.0.0.1,GET,http://localhost:8000/,1528115769,,200
+06871f,127.0.0.1,GET,http://localhost:8000/review/,1528115790,,200
+6302a3,127.0.0.1,GET,http://localhost:8000/review/new,1528115795,,200
+282418,127.0.0.1,GET,http://localhost:8000/review/,1528115921,,200
+49e917,127.0.0.1,GET,http://localhost:8000/review/new,1528115925,,200
