@@ -507,6 +507,12 @@
     <service id="AppBundle\Controller\FlightController" class="AppBundle\Controller\FlightController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Controller\ListingController" class="AppBundle\Controller\ListingController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Controller\PlaneModelController" class="AppBundle\Controller\PlaneModelController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -514,9 +520,6 @@
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\UserController" class="AppBundle\Controller\UserController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="AppBundle\Controller\planeModelController" class="AppBundle\Controller\planeModelController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Form\FlightType" class="AppBundle\Form\FlightType" public="false" autowire="true" autoconfigure="true">
@@ -550,7 +553,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.ggdu_ox"/>
+      <argument type="service" id="service_locator.wbxwufu"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -3625,14 +3628,16 @@
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\FlightController" class="AppBundle\Controller\FlightController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\FlightController" class="AppBundle\Controller\FlightController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ListingController" class="AppBundle\Controller\ListingController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\ListingController" class="AppBundle\Controller\ListingController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\PlaneModelController" class="AppBundle\Controller\PlaneModelController" public="true" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\PlaneModelController" class="AppBundle\Controller\PlaneModelController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\ReservationController" class="AppBundle\Controller\ReservationController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\SiteController" class="AppBundle\Controller\SiteController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\SiteController" class="AppBundle\Controller\SiteController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\UserController" class="AppBundle\Controller\UserController" public="true" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\UserController" class="AppBundle\Controller\UserController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\planeModelController" class="AppBundle\Controller\planeModelController" public="true" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.AppBundle\Controller\planeModelController" class="AppBundle\Controller\planeModelController" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\FlightType" class="AppBundle\Form\FlightType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\FlightType" class="AppBundle\Form\FlightType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\ReservationType" class="AppBundle\Form\ReservationType" public="false" autowire="true" abstract="true"/>
@@ -3644,6 +3649,14 @@
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\planeModelType" class="AppBundle\Form\planeModelType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\planeModelType" class="AppBundle\Form\planeModelType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="service_locator.yep05aa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.wpnu9md" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.xhztb6y" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -3659,11 +3672,7 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.s5e.ufo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection"/>
-    </service>
-    <service id="service_locator.ggdu_ox" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.wbxwufu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>

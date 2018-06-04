@@ -35,7 +35,7 @@ class Flight
     private $arrival;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\planeModel", inversedBy="plane")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\PlaneModel", inversedBy="plane")
      * @ORM\JoinColumn(nullable=true)
      */
     private $plane;
