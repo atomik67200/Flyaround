@@ -105,6 +105,8 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="locale">en</parameter>
+    <parameter key="unit">km</parameter>
+    <parameter key="time">h</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -540,6 +542,10 @@
     <service id="AppBundle\Form\planeModelType" class="AppBundle\Form\planeModelType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="AppBundle\Service\FlightInfo" class="AppBundle\Service\FlightInfo" public="false" autowire="true" autoconfigure="true">
+      <argument>km</argument>
+      <argument>h</argument>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -556,7 +562,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.wbxwufu"/>
+      <argument type="service" id="service_locator.6cojpdh"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -2647,6 +2653,14 @@
       <call method="addRuntimeLoader">
         <argument type="service" id="twig.runtime_loader"/>
       </call>
+      <call method="addGlobal">
+        <argument>unit</argument>
+        <argument>km</argument>
+      </call>
+      <call method="addGlobal">
+        <argument>time</argument>
+        <argument>h</argument>
+      </call>
       <configurator service="twig.configurator.environment" method="configure"/>
     </service>
     <service id="twig.app_variable" class="Symfony\Bridge\Twig\AppVariable" public="false">
@@ -3653,6 +3667,12 @@
     <service id="abstract.instanceof.AppBundle\Form\UserType" class="AppBundle\Form\UserType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\planeModelType" class="AppBundle\Form\planeModelType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\planeModelType" class="AppBundle\Form\planeModelType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="service_locator.hj.8ua3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="FlightInfo" type="service" id="AppBundle\Service\FlightInfo" on-invalid="ignore"/>
+      </argument>
+    </service>
     <service id="service_locator.yep05aa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -3677,9 +3697,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.wbxwufu" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.6cojpdh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="AppBundle\Controller\FlightController:showAction" type="service" id="service_locator.hj.8ua3"/>
+        <argument key="AppBundle\Controller\FlightController::showAction" type="service" id="service_locator.hj.8ua3"/>
+      </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id="service_locator.iv.jde6"/>

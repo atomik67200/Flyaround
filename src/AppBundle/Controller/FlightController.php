@@ -2,10 +2,14 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Service\FlightInfo;
+use AppBundle\Entity\PlaneModel;
 use AppBundle\Entity\Flight;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Flight controller.
@@ -61,15 +65,31 @@ class FlightController extends Controller
      * Finds and displays a flight entity.
      *
      * @Route("/{id}", name="flight_show")
+     *
      * @Method("GET")
      */
-    public function showAction(Flight $flight)
+    public function showAction(Request $request,Flight $flight, FlightInfo $FlightInfo)
     {
+        //calculate a flight distance between departure and arrival
+        $distance = $FlightInfo->getdistance(
+            $flight->getDeparture()->getLatitude(),
+            $flight->getDeparture()->getLongitude(),
+            $flight->getArrival()->getLatitude(),
+            $flight->getArrival()->getLongitude()
+        );
+
+        $time = $FlightInfo->getTime(
+            $distance,
+            $flight->getPlane()-> getCruiseSpeed()
+        );
+
         $deleteForm = $this->createDeleteForm($flight);
 
         return $this->render('flight/show.html.twig', array(
             'flight' => $flight,
             'delete_form' => $deleteForm->createView(),
+            'distance' =>$distance,
+            'time'=>$time
         ));
     }
 
