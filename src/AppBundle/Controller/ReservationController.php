@@ -5,8 +5,11 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Reservation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Service\Mailer;
+use Swift_Mailer;
+use Twig_Environment;
 /**
  * Reservation controller.
  *
@@ -37,7 +40,7 @@ class ReservationController extends Controller
      * @Route("/new", name="reservation_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,Swift_Mailer $mailer, Twig_Environment $templating)
     {
         $reservation = new Reservation();
         $form = $this->createForm('AppBundle\Form\ReservationType', $reservation);
@@ -48,6 +51,12 @@ class ReservationController extends Controller
             $em->persist($reservation);
             $em->flush();
 
+            // Pilot mail
+            $mail = new Mailer($mailer,$templating);
+            $mail1 = new Mailer($mailer,$templating);
+
+            $mail->sendMail('atomic67200@gmail.com','Confirmation' );
+            $mail1->sendMail('atomic67200@gmail.com', 'Notification');
             return $this->redirectToRoute('reservation_show', array('id' => $reservation->getId()));
         }
 

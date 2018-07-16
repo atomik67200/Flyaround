@@ -68,6 +68,82 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+    <p>vous etes bien sur la nouvelles routes review mais vide</p>
+
+    <h1>Reviews list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Text</th>
+            <th>Publicationdate</th>
+            <th>Note</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        ";
+        // line 37
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["reviews"]) || array_key_exists("reviews", $context) ? $context["reviews"] : (function () { throw new Twig_Error_Runtime('Variable "reviews" does not exist.', 37, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["review"]) {
+            // line 38
+            echo "            <tr>
+                <td><a href=\"";
+            // line 39
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_show", array("id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "id", array()), "html", null, true);
+            echo "</a></td>
+                <td>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "text", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 41
+            if (twig_get_attribute($this->env, $this->source, $context["review"], "publicationDate", array())) {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "publicationDate", array()), "Y-m-d H:i:s"), "html", null, true);
+            }
+            echo "</td>
+                <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "note", array()), "html", null, true);
+            echo "</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href=\"";
+            // line 46
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_show", array("id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", array()))), "html", null, true);
+            echo "\">show</a>
+                        </li>
+                        <li>
+                            <a href=\"";
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["review"], "id", array()))), "html", null, true);
+            echo "\">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 55
+        echo "        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href=\"";
+        // line 60
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_new");
+        echo "\">Create a new review</a>
+        </li>
+    </ul>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -77,7 +153,7 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
 
     }
 
-    // line 24
+    // line 64
     public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -86,7 +162,7 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 25
+        // line 65
         echo "    <style>
         body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
         h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
@@ -137,7 +213,7 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
 
     public function getDebugInfo()
     {
-        return array (  90 => 25,  81 => 24,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  166 => 65,  157 => 64,  143 => 60,  136 => 55,  124 => 49,  118 => 46,  111 => 42,  105 => 41,  101 => 40,  95 => 39,  92 => 38,  88 => 37,  54 => 5,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -163,8 +239,48 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-{% endblock %}
+    <p>vous etes bien sur la nouvelles routes review mais vide</p>
 
+    <h1>Reviews list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Text</th>
+            <th>Publicationdate</th>
+            <th>Note</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for review in reviews %}
+            <tr>
+                <td><a href=\"{{ path('review_show', { 'id': review.id }) }}\">{{ review.id }}</a></td>
+                <td>{{ review.text }}</td>
+                <td>{% if review.publicationDate %}{{ review.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ review.note }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href=\"{{ path('review_show', { 'id': review.id }) }}\">show</a>
+                        </li>
+                        <li>
+                            <a href=\"{{ path('review_edit', { 'id': review.id }) }}\">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href=\"{{ path('review_new') }}\">Create a new review</a>
+        </li>
+    </ul>
+{% endblock %}
 {% block stylesheets %}
     <style>
         body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
@@ -195,6 +311,6 @@ class __TwigTemplate_3f3cce7825c57b2ecf7df5df1af24add9a961054f09136e97082391e93e
 
 
 
-{% endblock %}", "review/index.html.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/app/Resources/views/review/index.html.twig");
+{% endblock %}", "review/index.html.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/app/Resources/views/review/index.html.twig");
     }
 }

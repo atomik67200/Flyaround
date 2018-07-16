@@ -1248,6 +1248,6 @@ class __TwigTemplate_26f4bc7a679ba381ea385c6ca99184c6743bf469dc010aa3891ede4d73b
         display: none;
     }
 }
-", "@WebProfiler/Profiler/toolbar.css.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar.css.twig");
+", "@WebProfiler/Profiler/toolbar.css.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar.css.twig");
     }
 }

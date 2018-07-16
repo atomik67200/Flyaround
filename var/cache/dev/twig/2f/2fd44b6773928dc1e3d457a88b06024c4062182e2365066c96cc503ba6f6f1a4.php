@@ -64,6 +64,11 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
                     <li><a href=\"/site/\">Aeroport</a></li>
                     <li><a href=\"/user/\">Utilisateurs</a></li>
                     <li><a href=\"/planemodel/\">Avions</a></li>
+                    <li><a href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_index");
+        echo "\">Voir tous les avis utilisateurs</a></li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -76,25 +81,25 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
             <ul>
                 <li>
                     <a href=\"";
-        // line 28
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("planemodel_index");
         echo "\">Voir les avions</a>
                 </li>
                 <li>
                     <a href=\"";
-        // line 31
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("reservation_index");
         echo "\">Voir les reservations</a>
                 </li>
                 <li>
                     <a href=\"";
-        // line 34
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("flight_index");
         echo "\">Voir les vols</a>
                 </li>
                 <li>
                     <a href=\"";
-        // line 37
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("site_index");
         echo "\">Voir les terrains</a>
                 </li>
@@ -113,7 +118,7 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
 
     }
 
-    // line 47
+    // line 49
     public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -122,7 +127,7 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 48
+        // line 50
         echo "<style>
     body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
     h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
@@ -170,7 +175,7 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
 
     public function getDebugInfo()
     {
-        return array (  126 => 48,  117 => 47,  98 => 37,  92 => 34,  86 => 31,  80 => 28,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  131 => 50,  122 => 49,  103 => 39,  97 => 36,  91 => 33,  85 => 30,  69 => 17,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -191,6 +196,8 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
                     <li><a href=\"/site/\">Aeroport</a></li>
                     <li><a href=\"/user/\">Utilisateurs</a></li>
                     <li><a href=\"/planemodel/\">Avions</a></li>
+                    <li><a href=\"{{ path('review_index') }}\">Voir tous les avis utilisateurs</a></li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -249,6 +256,6 @@ class __TwigTemplate_8c4ae31e47c5b4f249ce6130373ac5bb013cb6ef3bc5f26f7fc198fb3fa
     }
 </style>
 {% endblock %}
-", "default/index.html.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/app/Resources/views/default/index.html.twig");
+", "default/index.html.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/app/Resources/views/default/index.html.twig");
     }
 }

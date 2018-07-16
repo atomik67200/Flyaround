@@ -20,6 +20,10 @@
         </div><!-- /.container-fluid -->
     </nav>
     <h1>Bienvenue sur la vue de Review/New</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}
 
 {% block stylesheets %}

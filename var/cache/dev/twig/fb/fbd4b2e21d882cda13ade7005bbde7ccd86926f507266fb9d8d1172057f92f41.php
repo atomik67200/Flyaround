@@ -376,6 +376,6 @@ class __TwigTemplate_c1cb13073d4e07a72a941e409e61fb5e283c05d37c6fdb3e16a1f1b0014
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
     }
 }

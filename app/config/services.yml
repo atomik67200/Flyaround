@@ -36,3 +36,5 @@ services:
         arguments:
           $unit: '%unit%'
           $time: '%time%'
+    AppBundle\Service\Mailer:
+        autowire: true

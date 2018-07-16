@@ -350,7 +350,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         elseif (0 === strpos($pathinfo, '/review')) {
             // review_index
             if ('/review' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::ReviewAction',  '_route' => 'review_index',);
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::indexAction',  '_route' => 'review_index',);
                 if ('/' === substr($pathinfo, -1)) {
                     // no-op
                 } elseif ('GET' !== $canonicalMethod) {
@@ -370,7 +370,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             // review_new
             if ('/review/new' === $pathinfo) {
-                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::ReviewNewAction',  '_route' => 'review_new',);
+                $ret = array (  '_controller' => 'AppBundle\\Controller\\ReviewController::newAction',  '_route' => 'review_new',);
                 if (!in_array($canonicalMethod, array('GET', 'POST'))) {
                     $allow = array_merge($allow, array('GET', 'POST'));
                     goto not_review_new;
@@ -379,6 +379,42 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $ret;
             }
             not_review_new:
+
+            // review_show
+            if (0 === strpos($pathinfo, '/review/show') && preg_match('#^/review/show/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'review_show')), array (  '_controller' => 'AppBundle\\Controller\\ReviewController::showAction',));
+                if (!in_array($canonicalMethod, array('GET'))) {
+                    $allow = array_merge($allow, array('GET'));
+                    goto not_review_show;
+                }
+
+                return $ret;
+            }
+            not_review_show:
+
+            // review_edit
+            if (preg_match('#^/review/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'review_edit')), array (  '_controller' => 'AppBundle\\Controller\\ReviewController::editAction',));
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_review_edit;
+                }
+
+                return $ret;
+            }
+            not_review_edit:
+
+            // review_delete
+            if (0 === strpos($pathinfo, '/review/delete') && preg_match('#^/review/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                $ret = $this->mergeDefaults(array_replace($matches, array('_route' => 'review_delete')), array (  '_controller' => 'AppBundle\\Controller\\ReviewController::deleteAction',));
+                if (!in_array($requestMethod, array('DELETE'))) {
+                    $allow = array_merge($allow, array('DELETE'));
+                    goto not_review_delete;
+                }
+
+                return $ret;
+            }
+            not_review_delete:
 
         }
 

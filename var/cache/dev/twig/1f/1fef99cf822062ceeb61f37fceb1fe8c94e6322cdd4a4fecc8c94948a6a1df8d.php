@@ -474,6 +474,6 @@ class __TwigTemplate_37f630f0d18b31c9ea879b12ab976b6b42078e1ed3859cde3be65d2fa54
         {% endif %}
     </div>
 </div>
-", "@Twig/Exception/exception.html.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.html.twig");
+", "@Twig/Exception/exception.html.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.html.twig");
     }
 }

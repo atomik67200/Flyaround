@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/flight/">Vols</a></li>
+                    <li><a href="/reservation/">Reservations</a></li>
+                    <li><a href="/site/">Aeroport</a></li>
+                    <li><a href="/user/">Utilisateurs</a></li>
+                    <li><a href="/planemodel/">Avions</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <h1>Bienvenue sur la vue de Show de Review</h1>
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ reviews.id }}</td>
+        </tr>
+        <tr>
+            <th>Text</th>
+            <td>{{ reviews.text }}</td>
+        </tr>
+        <tr>
+            <th>Publicationdate</th>
+            <td>{% if reviews.publicationDate %}{{ reviews.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ reviews.note }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ reviews.userRated }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ reviews.reviewAuthor }}</td>
+        </tr>
+        </tbody>
+    </table>
+   <ul>
+        <li>
+            <a href="{{ path('review_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('review_edit', { 'id': reviews.id }) }}">Edit</a>
+        </li>
+       <li>
+           {{ form_start(delete_form) }}
+           <input type="submit" value="Delete">
+           {{ form_end(delete_form) }}
+       </li>
+   </ul>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+        h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+        h1 { font-size: 36px; }
+        h2 { font-size: 21px; margin-bottom: 1em; }
+        p { margin: 0 0 1em 0; }
+        a { color: #0000F0; }
+        a:hover { text-decoration: none; }
+        code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+        #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+        #container { padding: 2em; }
+        #welcome, #status { margin-bottom: 2em; }
+        #welcome h1 span { display: block; font-size: 75%; }
+        #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+        #icon-book { display: none; }
+
+        @media (min-width: 768px) {
+            #wrapper { width: 80%; margin: 2em auto; }
+            #icon-book { display: inline-block; }
+            #status a, #next a { display: block; }
+
+            @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+            @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+            .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+        }
+    </style>
+
+
+
+{% endblock %}

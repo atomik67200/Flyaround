@@ -1659,6 +1659,6 @@ class __TwigTemplate_416e9e73a7d490c8c857ad2e2941008209f35d7babebfb4bde792e90c9b
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/wilder/flyaround/Qu-te-nouveau-projet/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/wilder/Quête FlyAround/Qu-te-nouveau-projet/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }
